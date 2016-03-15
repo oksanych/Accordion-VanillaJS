@@ -1,0 +1,98 @@
+@import "partials/variables";
+@import "partials/global";
+@import "partials/header";
+
+.accordionWrap {
+  margin-bottom: 2rem;
+}
+
+.headerMain {
+  margin-bottom: 2.5rem;
+}
+
+.accordionTitle {
+  border-radius: 3rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 1.25rem 2rem;
+  position: relative;
+
+  &::after {
+    content: '';
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 12px solid $orange;
+    height: 0;
+    position: absolute;
+    right: 2rem;
+    top: 1.5rem;
+    width: 0;
+  }
+}
+
+.accordionSection {
+  background: $gainsboro;
+  border-radius: 3rem;
+  margin-bottom: .5rem;
+
+  &:nth-child(n+1) {
+    .accordionTitle {
+      background: $grey;
+      color: $white;
+    }
+  }
+
+  &:nth-child(2n+2) {
+    .accordionTitle {
+      background: $gainsboro;
+      color: $matterhorn;
+    }
+  }
+}
+
+.active {
+
+  &.accordionSection {
+    background: $gainsboro;
+    border-radius: 3rem;
+    margin-bottom: .5rem;
+
+    &:nth-child(n+1) {
+      .accordionTitle {
+        background: $orange;
+        color: $white;
+      }
+    }
+
+    &:nth-child(2n+2) {
+      .accordionTitle {
+        background: $orange;
+        color: $white;
+      }
+    }
+  }
+
+  .accordionDrop {
+    display: block;
+  }
+
+  .accordionTitle {
+    &::after {
+      content: '';
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-bottom: 12px solid $white;
+      height: 0;
+      position: absolute;
+      right: 2rem;
+      top: .25rem;
+      width: 0;
+    }
+  }
+}
+
+.accordionDrop {
+  display: none;
+  padding: 1rem 2rem;
+  line-height: 1.4;
+}
